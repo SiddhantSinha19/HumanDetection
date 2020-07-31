@@ -46,6 +46,14 @@ The next function load_mask() will load the mask for mrcnn. We will use our boun
 
 Next, few cells of code is just to test the proper loading of train and test images.
 
+PersonConfig() class defines the parameters for the model. Then the model is trained for 5 epoch after excluding the following layers "mrcnn_class_logits", "mrcnn_bbox_fc",  "mrcnn_bbox", "mrcnn_mask"
+
+Evaluation of model
+
+Model is evaluation by calculating IoU between predicted and actual bounding box. If IoU > 0.5, it is considered as a correct prediction. Then we find precision. And mAP is the mean average percision 
+
+We get a mAP of 97.3 train set and 93.5 on test set.
+
 Please note: Although I have an deep understanding of the code, convolution neural networks and MRCNN, I have taken help of the several articles and tutorials. As I already mentioned, I thank the deep learning community for contributing their work on open source platforms and via various articles/ tutorials. 
 
 Also, a lot of people use annotations in the form of xml, I have used txt file here, because the dataset which I used is from 2005 and the annotations were provided in txt file. This should not be an issue if you are able to parse the text file and retrieve the required information from it.
