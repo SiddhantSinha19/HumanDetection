@@ -4,7 +4,7 @@ I am really thankful to the deep learning community online for uploading various
 
 For this project, I used transfer learning as training a model from scratch would have been extremely time consuming. I used Masked R-CNN model for this.
 
-Dataset: Pascal VOC2005 challenge [I decided to go with this as it contained fewer images for human class (about 160 in total), which is sufficient for transfer learning. 
+Dataset: Pascal VOC2005 challenge [I decided to go with this as it contained fewer images for human class (about 160 in total), which is sufficient for transfer learning.  Link - http://host.robots.ox.ac.uk/pascal/VOC/databases.html#VOC2005_1
 
 Installing Mask R-CNN
 
@@ -14,7 +14,7 @@ cd Mask_RCNN
 
 python setup.py install
 
-Download the model weights here: 
+Download the model weights here: https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5
 
 
 In order to run my project without making any changes make sure you have a following folder structure.
