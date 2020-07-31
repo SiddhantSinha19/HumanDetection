@@ -33,6 +33,22 @@ You are good to go now. Download "HumanDetection_mrcnn.ipynb" python notebook an
 
 Just run this notebook, it should train the model and then evaluate as well.
 
-If you want to just evaluate the model without any training, simply donwload "person_model20200731T0029" folder from this repository. This has saved model after training, and has 5 different files. Each file is model's data after one epoch. Save this folder in objectdetection folder as objectdetection/person_model20200731T0029
 
-Then download testingHumanDetection.ipynb and run it. It should evaluate the model.
+Please note that testingHumanDetection.ipynb is just evaluation of the model and will not work unless you have trained the model.
+
+Explanation of code:
+
+The function load_dataset() loads the dataset to a single class i.e. "person". The name of the images are person_001, person_002 and so on. So if the number is < 197, the number is loaded into the train set. And if the number is >= 197, then image is loaded into the test set. Finally we are adding image to the dataset along with annotation path.
+
+The function extract_boxes() extracts details of the image and bounding box from the annotations file. Annotations file is a text file. The dimensions of the image are always in 3rd line, so we extract width and height from there. Further, after going through the annotations file, it can be seen that if a line has phrase "Bounding box", it will be followed be details of the box. So, we iterate through all the lines, and whenever the phrase is matched, we extract the box details. Note that there can be more than one bounding box in an image. [More than 1 person]
+
+The next function load_mask() will load the mask for mrcnn. We will use our bounding boxes are our masks. So,t his function simply calls the extract_boxes() functions from it and then creates masks from it.
+
+Next, few cells of code is just to test the proper loading of train and test images.
+
+Please note: Although I have an deep understanding of the code, convolution neural networks and MRCNN, I have taken help of the several articles and tutorials. As I already mentioned, I thank the deep learning community for contributing their work on open source platforms and via various articles/ tutorials. 
+
+Also, a lot of people use annotations in the form of xml, I have used txt file here, because the dataset which I used is from 2005 and the annotations were provided in txt file. This should not be an issue if you are able to parse the text file and retrieve the required information from it.
+
+
+If you have any query or issue - you can contact me at sid.ronaldo1904@gmail.com
