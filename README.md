@@ -11,9 +11,7 @@ Installing Mask R-CNN
 git clone https://github.com/matterport/Mask_RCNN.git
 
 cd Mask_RCNN
-
 python setup.py install
-
 Download the model weights here: 
 
 
