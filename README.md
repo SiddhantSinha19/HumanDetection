@@ -1,4 +1,7 @@
-Human Detection from a given image
+Project Name: Human Detection [from an image] <br>
+Author Name: Siddhant Sinha <br>
+Project Date: April 2020 <br>
+
 
 I am really thankful to the deep learning community online for uploading various articles and their work.
 
